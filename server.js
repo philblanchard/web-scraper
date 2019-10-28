@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 const chalk = require("chalk");
-var fs = require("fs");
+// var fs = require("fs");
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
@@ -54,10 +54,10 @@ app.get("/scrape", function(req, res){
           console.log(err)
         })
         // Writing the news inside a json file
-        fs.writeFile("hackernews.json", JSON.stringify(news), function(err) {
-          if (err) throw err;
-          console.log("Saved!");
-        });
+        // fs.writeFile("hackernews.json", JSON.stringify(news), function(err) {
+        //   if (err) throw err;
+        //   console.log("Saved!");
+        // });
         console.log(success("Browser Closed"));
       } catch (err) {
         // Catch and display errors
