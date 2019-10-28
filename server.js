@@ -19,7 +19,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json());
 app.use(express.static("public"))
 
-mongoose.connect("mongodb://localhost/webscrape", {useNewUrlParser: true});
+var MONGOOSE_URI = process.env.MONGODB_URI || "mongodb://localhost/webscrape"
+
+mongoose.connect(MONGOOSE_URI, {useNewUrlParser: true});
 
 app.get("/scrape", function(req, res){
     (async () => {
