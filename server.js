@@ -10,7 +10,7 @@ const error = chalk.bold.red;
 const success = chalk.keyword("green");
 
 var db = require("./models");
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
