@@ -27,7 +27,7 @@ app.get("/scrape", function(req, res){
     (async () => {
       try {
         // open the headless browser
-        var browser = await puppeteer.launch({ headless: true });
+        var browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
         // open a new page
         var page = await browser.newPage();
         // enter url in page
